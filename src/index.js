@@ -11,11 +11,16 @@ function toggleClass(parent, child, classList) {
 
 function addClassOnHover(parent, child, classList) {
   parent.addEventListener('mouseover', () => {
-    child.classList.remove(classList);
+    setTimeout(() => {
+      child.classList.remove(classList);
+    }, 50);
   })
   parent.addEventListener('mouseleave', () => {
-    child.classList.add(classList);
+    setTimeout(() => {
+      child.classList.add(classList);
+    }, 50);
   })
 }
 
 addClassOnHover(menu, hidden, 'hidden');
+addClassOnHover(hidden, hidden, 'hidden');

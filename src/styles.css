@@ -13,6 +13,7 @@
 #dropdown-container {
   display: flex;
   flex-direction: column;
+  width: 200px;
 }
 .dropdown-item {
   background-color: gray;
@@ -26,4 +27,5 @@
 
 .hidden {
     display: none;
+
 }
