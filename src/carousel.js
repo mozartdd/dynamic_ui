@@ -1,16 +1,21 @@
-let currentSlideIdx = 1;
+let currentSlideIdx = 0;
+const slides = document.querySelectorAll('.content');
 
-export function nextSlide(n) {
-    showSlides(currentSlideIdx += n);
+// Moves one slide forward or backwards.
+export function nextSlide(step) {
+  currentSlideIdx = (currentSlideIdx + step + slides.length) % slides.length;
+
+  classListToggle(slides, 'invisible');
 }
 
-function showSlides(n) {
-  const slides = document.querySelectorAll('.content');
+// Jumps between slides.
+export function jumpToSlide(n) {
+  currentSlideIdx = n;
+  classListToggle(slides, 'invisible');
+}
 
-  if (n > slides.length) {currentSlideIdx = 1};
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].classList.add('invisible');
-  }
-  slides[currentSlideIdx-1].classList.remove('invisible');
-  console.log(currentSlideIdx);
+// Helper function to add or remove classlist.
+function classListToggle(element, attribute) {
+  element.forEach(s => s.classList.add(attribute));
+  element[currentSlideIdx].classList.remove(attribute);
 }
