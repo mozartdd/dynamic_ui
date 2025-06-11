@@ -29,3 +29,18 @@
     display: none;
 
 }
+
+/* Image carousel style */
+.img-container {
+  width: 600px;
+  height: 400px;
+  border: 2px solid;
+  margin: 200px auto;
+}
+.invisible {
+  display: none;
+}
+#button-div {
+  display: flex;
+  justify-content: space-between;
+}

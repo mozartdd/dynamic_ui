@@ -1,26 +1,14 @@
 import './styles.css';
+import { toggleClass, addClassOnHover } from './dropdown.js';
+import { nextSlide } from './carousel.js' 
 
 const menu = document.getElementById('dropdown-header');
 const hidden = document.querySelector('.hidden');
+const nextBtn = document.querySelector('[data-next]');
 
-function toggleClass(parent, child, classList) {
-  parent.addEventListener('click', () => {
-    child.classList.toggle(classList);
-  })
-}
-
-function addClassOnHover(parent, child, classList) {
-  parent.addEventListener('mouseover', () => {
-    setTimeout(() => {
-      child.classList.remove(classList);
-    }, 50);
-  })
-  parent.addEventListener('mouseleave', () => {
-    setTimeout(() => {
-      child.classList.add(classList);
-    }, 50);
-  })
-}
+nextBtn.addEventListener('click', () => {
+  nextSlide(1)
+});
 
 addClassOnHover(menu, hidden, 'hidden');
 addClassOnHover(hidden, hidden, 'hidden');
