@@ -48,6 +48,9 @@
   display: flex;
   justify-content: space-between;
 }
-.active {
-  border: 2px solid red;
+.jump-btn {
+  border: 5px solid red;
+}
+.inactive {
+  border: 2px solid black;
 }
